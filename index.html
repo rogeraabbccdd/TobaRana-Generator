@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2N1NWFYTX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5H9C0SRF7F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梟婆產生器</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap">
+  <link rel="stylesheet" href="./css/toba.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/fontawesome.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/solid.min.js"></script>
+
+  <meta name="msapplication-config" content="browserconfig.xml" />
+
+  <!-- Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="梟婆產生器">
+  <meta name="description" content="梟婆軸黨黨證產生器!">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="梟婆產生器">
+  <meta property="og:description" content="梟婆軸黨黨證產生器!">
+  <meta property="og:image" content="https://raw.githubusercontent.com/rogeraabbccdd/TobaRana-Generator/master/images/template.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="梟婆產生器">
+  <meta property="twitter:description" content="梟婆軸黨黨證產生器!">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/rogeraabbccdd/TobaRana-Generator/master/images/template.png">
+</head>
+<body>
+  <div id="app">
+    <div id="bg"></div>
+    <div class="container" id="content">
+      <div class="row justify-content-center">
+        <div class="col-10 text-white d-flex align-items-center justify-content-center my-4" id="title">
+          <img src="./images/logo.png" width="100" class="mx-3">
+          <h1>梟婆軸黨黨證產生器</h1>
+        </div>
+        <div class="col-10 my-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="input-" class="form-label">黨證編號</label>
+                <input placeholder="請輸入黨證編號..." class="form-control" id="input-id" type="text" v-model="input.id" @input="refresh">
+              </div>
+              <div class="mb-3">
+                <label for="input-dep0" class="form-label">入黨地點</label>
+                <input placeholder="請輸入入黨地點..." class="form-control" id="input-location" type="text" v-model="input.location" @input="refresh">
+              </div>
+              <div class="mb-3">
+                <label for="input-name0" class="form-label">名稱</label>
+                <input placeholder="請輸入名稱..." class="form-control" id="input-name" type="text" v-model="input.name" @input="refresh">
+              </div>
+              <div class="mb-3">
+                <label for="input-file0" class="form-label">大頭貼 (建議使用正方形圖片)</label>
+                <div class="form-file">
+                  <input id="input-file0" class="form-file-input" type="file" @input="handleFile" accept="image/*">
+                  <label class="form-file-label" for="input-file0">
+                    <span class="form-file-text">選擇圖片...</span>
+                    <span class="form-file-button">瀏覽</span>
+                  </label>
+                </div>
+              </div>
+              <canvas width="812" height="531" class="d-block my-3 canvas"></canvas>
+              <p class="text-center">
+                <button type="button" class="btn btn-success btn-lg btn-large" @click="download">下載圖片</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 text-white text-center mb-5" id="footer">
+          <p>
+            &copy; {{ dateYear }}
+            Made with ❤ by 
+            <a target="_blank" href="https://github.com/rogeraabbccdd">Kento</a>
+            <br>
+            <p>
+              <a href="https://discord.gg/xtv2XR77n4" target="_blank">
+                &gt;加入樂奈 Discord&lt;
+              </a>
+            </p>
+          </p>
+          <a target="_blank" href="https://github.com/rogeraabbccdd/TobaRana-Generator/fork">
+            <img class="mx-1" src="https://img.shields.io/github/forks/rogeraabbccdd/TobaRana-Generator?style=social">
+          </a>
+          <a target="_blank" href="https://github.com/rogeraabbccdd/TobaRana-Generator/stargazers">
+            <img class="mx-1" src="https://img.shields.io/github/stars/rogeraabbccdd/TobaRana-Generator?style=social">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.prod.js"></script>
+  <script src="./js/app.js"></script>
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+  </script>
+</body>
+</html>
