@@ -50,7 +50,7 @@ const app = Vue.createApp({
       const numfonts = 'Noto Sans TC'
       colorText(input.value.id, canvas.width/2 + 290, 130, 'bold #393939', '34px ' + numfonts, 'center')
       colorText(input.value.date, 200, 230, 'bold #393939', '35px ' + numfonts, 'left')
-      colorText(input.value.location, 200, 280, 'bold #393939', '40px ' + fonts, 'left')
+      colorText(input.value.location, 195, 278, 'bold #393939', '40px ' + fonts, 'left')
       colorText(input.value.date, 200, 326, 'bold #393939', '35px ' + numfonts, 'left')
       colorText(input.value.name, 250, 455, 'bold #393939', '80px ' + fonts, 'center')
     }
