@@ -48,7 +48,7 @@ const app = Vue.createApp({
       // Draw Texts
       const fonts = 'KaiTi, 標楷體, DFKai-SB, TW-Kai, BiauKai, 华文楷体, Noto Sans TC'
       const numfonts = 'Noto Sans TC'
-      colorText(input.value.id, canvas.width/2 + 290, 130, 'bold #393939', '34px ' + numfonts, 'center')
+      colorText(input.value.id, 620, 130, 'bold #393939', '34px ' + numfonts, 'left')
       colorText(input.value.date, 200, 230, 'bold #393939', '35px ' + numfonts, 'left')
       colorText(input.value.location, 195, 278, 'bold #393939', '40px ' + fonts, 'left')
       colorText(input.value.date, 200, 326, 'bold #393939', '35px ' + numfonts, 'left')
