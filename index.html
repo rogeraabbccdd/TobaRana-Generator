@@ -74,6 +74,16 @@
                 <label for="input-name0" class="form-label">名稱</label>
                 <input placeholder="請輸入名稱..." class="form-control" id="input-name" type="text" v-model="input.name" @input="refresh">
               </div>
+              <div class="mb-3 row text-center">
+                <div class="col-6">
+                  <p>入黨日期</p>
+                  <datepicker class="mx-auto" v-model="input.joinDate" :mode="single" highlight></datepicker>
+                </div>
+                <div class="col-6">
+                  <p>發證日期</p>
+                  <datepicker v-model="input.pubDate" :mode="single" highlight></datepicker>
+                </div>
+              </div>
               <div class="mb-3">
                 <label for="input-file0" class="form-label">大頭貼 (建議使用正方形圖片)</label>
                 <div class="form-file">
@@ -113,7 +123,12 @@
       </div>
     </div>
   </div>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script>
+    window.PopperCore = window.Popper
+  </script>
   <script src="https://unpkg.com/vue@next"></script>
+  <script src='https://unpkg.com/v-calendar@3.0.0-alpha.3/lib/vcalendar-browser.min.js'></script>
   <script src="./js/app.js"></script>
   <script type="module">
     import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';

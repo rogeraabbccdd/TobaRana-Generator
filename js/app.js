@@ -1,4 +1,4 @@
-const { ref, onMounted, onUpdated } = Vue
+const { ref, computed, onMounted, onUpdated } = Vue
 
 const app = Vue.createApp({
   setup(props, context) {
@@ -7,14 +7,22 @@ const app = Vue.createApp({
       name: '火山梟子',
       location: '靛之森',
       avatar: null,
-      date: new Date().toLocaleDateString()
+      joinDate: new Date(),
+      pubDate: new Date()
     })
     let canvas = null
     let ctx = null
     let template = null
 
-    const date = new Date()
-    const dateYear = ref(date.getFullYear())
+    const dateYear = ref(new Date().getFullYear())
+
+    const joinDateText = computed(() => {
+      return input.value.joinDate.toLocaleDateString()
+    })
+
+    const pubDateText = computed(() => {
+      return input.value.pubDate.toLocaleDateString()
+    })
 
     const handleFile = (e) => {
       const reader = new FileReader()
@@ -49,9 +57,9 @@ const app = Vue.createApp({
       const fonts = 'KaiTi, 標楷體, DFKai-SB, TW-Kai, BiauKai, 华文楷体, Noto Sans TC'
       const numfonts = 'Noto Sans TC'
       colorText(input.value.id, 620, 130, 'bold #393939', '34px ' + numfonts, 'left')
-      colorText(input.value.date, 200, 230, 'bold #393939', '35px ' + numfonts, 'left')
+      colorText(joinDateText.value, 200, 230, 'bold #393939', '35px ' + numfonts, 'left')
       colorText(input.value.location, 195, 278, 'bold #393939', '40px ' + fonts, 'left')
-      colorText(input.value.date, 200, 326, 'bold #393939', '35px ' + numfonts, 'left')
+      colorText(pubDateText.value, 200, 326, 'bold #393939', '35px ' + numfonts, 'left')
       colorText(input.value.name, 250, 455, 'bold #393939', '80px ' + fonts, 'center')
     }
 
@@ -115,8 +123,13 @@ const app = Vue.createApp({
       dateYear,
       handleFile,
       refresh,
-      date,
-      download
+      download,
+      joinDateText,
+      pubDateText
     }
   }
-}).mount('#app')
+})
+
+app.component('datepicker', vcalendar.DatePicker)
+
+app.mount('#app')
