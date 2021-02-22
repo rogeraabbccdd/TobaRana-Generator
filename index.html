@@ -75,11 +75,11 @@
                 <input placeholder="請輸入名稱..." class="form-control" id="input-name" type="text" v-model="input.name" @input="refresh">
               </div>
               <div class="mb-3 row text-center">
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                   <p>入黨日期</p>
-                  <datepicker class="mx-auto" v-model="input.joinDate" :mode="single" highlight></datepicker>
+                  <datepicker v-model="input.joinDate" :mode="single" highlight></datepicker>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                   <p>發證日期</p>
                   <datepicker v-model="input.pubDate" :mode="single" highlight></datepicker>
                 </div>

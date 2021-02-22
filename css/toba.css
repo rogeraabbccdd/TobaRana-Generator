@@ -62,3 +62,8 @@ body {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
+
+.vc-container {
+  width: 100%;
+  max-width: 270px;
+}
